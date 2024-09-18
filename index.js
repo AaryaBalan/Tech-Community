@@ -10,29 +10,34 @@ let queries = []
 let users = []
 let name = ''
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
 
 app.post('/submitted', (req, res) => {
+    const date = new Date()
     const queryData = {
         ...req.body,
         id: queries.length + 1,
-        answer: []
+        answer: [],
+        time: `${months[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
     }
     queries.push(queryData)
     console.log(queryData)
-    res.redirect('/#query')
+    res.redirect('trending#query')
 })
 
 app.post('/submitAns', (req, res) => {
+    const date = new Date()
     const queryData = queries.find(query => {
         return query.id == req.body.id
     })
-    queryData.answer.push(req.body)
+    queryData.answer.push({ ...req.body, time: `${months[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${date.getMinutes()}` })
     queries[req.body.id - 1] = queryData
     console.log(queryData)
-    res.redirect('/#query')
+    res.redirect('trending#query')
 })
 
 app.get('/queries', (req, res) => {
@@ -47,12 +52,17 @@ app.get('/profile', (req, res) => {
 app.post('/saveProfile', (req, res) => {
     name = req.body.username
     users.push({...req.body, userId: users.length+1})
+    users = users.reverse()
     console.log(users)
-    res.redirect('/#query')
+    res.redirect('/')
 })
 
 app.get('/trending', (req, res) => {
     res.render('trending.ejs')
+})
+
+app.get('/ask', (req, res) => {
+    res.render('ask.ejs')
 })
 
 app.get('/:name', (req, res) => {

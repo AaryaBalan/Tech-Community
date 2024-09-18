@@ -136,6 +136,7 @@ main {
     column-gap: 30px;
     width: 100%;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .profile-pic {
@@ -181,6 +182,7 @@ main {
     word-wrap: break-word;
     width: 700px;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
 }
 
 .ans-area {
@@ -291,6 +293,15 @@ textarea {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.ans-container{
+    position: relative;
+}
+
+.ans-container a{
+    color: #1b1f50;
+    text-decoration: underline;
+}
+
 .ans-pic {
     font-size: 45px;
     background-color: #1b1f50;
@@ -319,6 +330,7 @@ textarea {
 .query-main-1 {
     display: flex;
     column-gap: 30px;
+    align-items: end;
 }
 
 .ans-user-area {
@@ -372,4 +384,16 @@ textarea {
 
 .banner2-img{
     animation: move infinite 5s;
+}
+
+.time{
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+    color: #3b56de;
+}
+
+i {
+    color: white;
 }

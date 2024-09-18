@@ -4,9 +4,10 @@ async function getQueries() {
     document.querySelector('#authorName').value = localStorage.getItem('username')
     const queries = await fetch('/queries')
     const queriesJson = await queries.json()
-    let html = queriesJson.map(query => {
-
-        const ansHTML = query.answer.map(ans => {
+    const recentQuery = queriesJson[queriesJson.length - 1]
+    let html = ""
+    if (recentQuery) {
+        const ansHTML = recentQuery.answer.map(ans => {
             return (
                 `
                 <div class="user-ans">
@@ -20,39 +21,39 @@ async function getQueries() {
                                 </div>
                             </div>
                         </div>
+                        <div class="time">${ans.time}</div>
                     </div>
                 </div>
                 `
             )
         })
 
-        return (
+        html =
             `
-            <div class="query-main-1">
-                <div class="recent-query">
-                    <div class="query-info">
-                        <div class="profile-pic">${query.authorName[0].toUpperCase()}</div>
-                        <div class="query-container">
-                            <a class='person-link' href='/${query.authorName}' class="person-name">${query.authorName.toUpperCase()}</a>
-                            <div class="query-title">${query.title}</div>
-                            <div class="query-content">${query.content}</div>
+                <div class="query-main-1">
+                    <div class="recent-query">
+                        <div class="query-info">
+                            <div class="profile-pic">${recentQuery.authorName[0].toUpperCase()}</div>
+                            <div class="query-container">
+                                <a class='person-link' href='/${recentQuery.authorName}' class="person-name">${recentQuery.authorName.toUpperCase()}</a>
+                                <div class="query-title">${recentQuery.title}</div>
+                                <div class="query-content">${recentQuery.content}</div>
+                            </div>
+                        </div>
+                        <div class='ans-user-area'>
+                        ${ansHTML}
                         </div>
                     </div>
-                    <div class='ans-user-area'>
-                    ${ansHTML}
-                    </div>
+                    <form action="/submitAns" method="post" class="ans-area" id="ans-area">
+                        <input type="text" name="username" id="username" value="${localStorage.getItem('username')}" hidden>
+                        <input type="number" name="id" id="" value='${recentQuery.id}' hidden>
+                        <textarea name="answer" id="answer" required></textarea>
+                        <button class="submit-ans" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
                 </div>
-                <form action="/submitAns" method="post" class="ans-area" id="ans-area">
-                    <input type="text" name="username" id="username" value="${localStorage.getItem('username')}" hidden>
-                    <input type="number" name="id" id="" value='${query.id}' hidden>
-                    <textarea name="answer" id="answer" required></textarea>
-                    <button class="submit-ans" type="submit">Submit</button>
-                </form>
-            </div>
-
-            `
-        )
-    })
+    
+                `
+    }
     console.log(html)
     if (html == '') {
         html = `

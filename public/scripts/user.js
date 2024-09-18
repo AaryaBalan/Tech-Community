@@ -18,4 +18,5 @@ async function getUser(username) {
     document.querySelector('.user-info-container').innerHTML = html
 }
 
+console.log(document.querySelector('.demo').innerHTML)
 getUser(document.querySelector('.demo').innerHTML)

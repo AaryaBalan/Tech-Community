@@ -10,7 +10,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/d8ca3bfef7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/user.css">
+    <link rel="stylesheet" href="styles/ask.css">
     <title>user</title>
 </head>
 
@@ -27,18 +27,24 @@
         </div>
     </nav>
 
-    <div class="demo" hidden>
-        <%= username %>
+    <div class="ask-your-query">
+        <h1>Ask you query</h1>
+        <form action="/submitted" method="post" class="ask-query-container">
+            <input type="text" name="authorName" id="authorName" hidden>
+            <input type="text" name="title" id="title" placeholder="Title..." required>
+            <textarea name="content" id="content" placeholder="Query..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="ask-imgs">
+        <img src="images/ask1.svg" alt="">
+        <div class="ask-content">Ask Your queries <br>Let Community react for it</div>
+        <img src="images/ask2.svg" alt="">
     </div>
 
 
-    <div class="user-info-container">
-
-    </div>
-
-
-
-    <script src="scripts/user.js"></script>
+    <script src="scripts/ask.js"></script>
 </body>
 
 </html>

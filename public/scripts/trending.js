@@ -14,10 +14,11 @@ async function getQueries() {
                         <div class="single-ans-container">
                             <div class="ans-pic">${ans.username[0].toUpperCase()}</div>
                             <div class="ans-container">
-                            <a href='/${ans.username}' class="person-name">${ans.username.toUpperCase()}</a>
+                                <a href='/${ans.username}' class="person-name">${ans.username.toUpperCase()}</a>
                                 <div class="ans-content">
                                     ${ans.answer}
                                 </div>
+                                <div class="time">${ans.time}</div>
                             </div>
                         </div>
                     </div>
@@ -28,7 +29,7 @@ async function getQueries() {
 
         return (
             `
-            <div class="query-main-1">
+            <div class="query-main-1" id="#query">
                 <div class="recent-query">
                     <div class="query-info">
                         <div class="profile-pic">${query.authorName[0].toUpperCase()}</div>
@@ -37,6 +38,7 @@ async function getQueries() {
                             <div class="query-title">${query.title}</div>
                             <div class="query-content">${query.content}</div>
                         </div>
+                        <div class="time">${query.time}</div>
                     </div>
                     <div class='ans-user-area'>
                     ${ansHTML}
@@ -46,7 +48,7 @@ async function getQueries() {
                     <input type="text" name="username" id="username" value="${localStorage.getItem('username')}" hidden>
                     <input type="number" name="id" id="" value='${query.id}' hidden>
                     <textarea name="answer" id="answer" required></textarea>
-                    <button class="submit-ans" type="submit">Submit</button>
+                    <button class="submit-ans" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
 
