@@ -18,11 +18,11 @@
     <nav>
         <div class="nav-left-portion">
             <!-- <img src={menu} alt="" className="icons" /> -->
-            <a href="/" class="nav-links">Tech Community</a>
+            <a href="/" class="nav-links brand">Tech Community</a>
         </div>
         <div class="nav-right-portion">
             <a href="/trending" class="nav-links">Trending</a>
-            <a href="/ask" class="nav-links">Ask</a>
+            <a href="/ask" class="nav-links active">Ask</a>
             <a href="/profile" class="nav-links">My Profile</a>
         </div>
     </nav>
@@ -33,7 +33,7 @@
             <input type="text" name="authorName" id="authorName" hidden>
             <input type="text" name="title" id="title" placeholder="Title..." required>
             <textarea name="content" id="content" placeholder="Query..." required></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" onsubmit="submit()">Submit</button>
         </form>
     </div>
 

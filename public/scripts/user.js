@@ -4,7 +4,7 @@ async function getUser(username) {
     const html = `
         <div class="user-info-section">
             <div class="profile-pic">
-                <img src="images/profile.png" alt="">
+                <img src="images/profile.webp" alt="">
             </div>
             <div class="user-info">
                 <div class="name">Name: <span>${userJson.username.toUpperCase()}</span></div>

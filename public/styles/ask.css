@@ -2,6 +2,9 @@
     display: flex;
     align-items: end;
     justify-content: space-around;
+    background-color: #dee6fb;
+    padding: 7px;
+    margin-top: 20px;
 }
 
 .ask-imgs img {
@@ -13,8 +16,8 @@
     align-self: center;
     font-size: 25px;
     font-weight: bold;
-    background-color: #dee6fb;
-    color: #1b1f50;
+    background-color: #1b1f50;
+    color: #dee6fb;
     padding: 15px 20px;
     border-radius: 100px;
     line-height: 1.5;

@@ -1,5 +1,6 @@
 .dp img {
-    height: 100px;
+    height: 200px;
+    border-radius: 10px;
 }
 
 .profile-container {
@@ -43,6 +44,16 @@ input {
     row-gap: 20px;
 }
 
+.profile-section{
+    background-color: #c4d4f9;
+    padding: 20px;
+    height: 100%;
+    width: 900px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
 #bio{
     width: 500px;
     height: 350px;
@@ -67,3 +78,49 @@ input {
     /* Firefox */
 }
 
+.recent-container1{
+    display: flex;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin: 20px;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.recent-query{
+    width: 760px;
+}
+
+.your-queries{
+    font-size: 25px;
+    margin-left: 40px;
+    margin-top: 40px;
+    background-color: #3b56de;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+hr{
+    margin-top: 40px;
+    color: #3b56de;
+}
+
+.recent-container1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.recent-container1 h1{
+    font-size: 25px;
+    color: #1b1f50;
+}
+
+.recent-container1 img{
+    height: 400px;
+    /* display: block;
+    margin: 0 auto; */
+}

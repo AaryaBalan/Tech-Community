@@ -17,7 +17,7 @@ async function getQueries() {
                             <div class="ans-container">
                             <a href='/${ans.username}' class="person-name">${ans.username.toUpperCase()}</a>
                                 <div class="ans-content">
-                                    ${ans.answer}
+                                    ${ans.answer.slice(0, 200)}
                                 </div>
                             </div>
                         </div>
@@ -36,9 +36,10 @@ async function getQueries() {
                             <div class="profile-pic">${recentQuery.authorName[0].toUpperCase()}</div>
                             <div class="query-container">
                                 <a class='person-link' href='/${recentQuery.authorName}' class="person-name">${recentQuery.authorName.toUpperCase()}</a>
-                                <div class="query-title">${recentQuery.title}</div>
-                                <div class="query-content">${recentQuery.content}</div>
+                                <div class="query-title">${recentQuery.title.slice(0, 40)}</div>
+                                <div class="query-content">${recentQuery.content.slice(0, 200)}</div>
                             </div>
+                        <div class="time">${recentQuery.time}</div>
                         </div>
                         <div class='ans-user-area'>
                         ${ansHTML}
@@ -47,7 +48,7 @@ async function getQueries() {
                     <form action="/submitAns" method="post" class="ans-area" id="ans-area">
                         <input type="text" name="username" id="username" value="${localStorage.getItem('username')}" hidden>
                         <input type="number" name="id" id="" value='${recentQuery.id}' hidden>
-                        <textarea name="answer" id="answer" required></textarea>
+                        <textarea name="answer" id="answer" placeholder="Help ${recentQuery.authorName.toUpperCase()}" required></textarea>
                         <button class="submit-ans" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                     </form>
                 </div>

@@ -1,7 +1,8 @@
 const express = require('express')
 const { url } = require('inspector')
 const app = express()
-// const ejs = require('ejs')
+const {getHomePage} = require('./utility/utility')
+
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -65,8 +66,11 @@ app.get('/ask', (req, res) => {
     res.render('ask.ejs')
 })
 
+app.get('/query/:id', (req, res) => {
+    res.render('singleQuery.ejs')
+})
+
 app.get('/:name', (req, res) => {
-    // const data = users.find(user => user.username == req.params.usernaaaryame)
     res.render('user.ejs', {
         username: req.params.name
     })

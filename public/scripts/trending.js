@@ -1,7 +1,7 @@
 initial()
 
 async function getQueries() {
-    document.querySelector('#authorName').value = localStorage.getItem('username')
+    // document.querySelector('#authorName').value = localStorage.getItem('username')
     const queries = await fetch('/queries')
     const queriesJson = await queries.json()
     let html = queriesJson.map(query => {
@@ -16,7 +16,7 @@ async function getQueries() {
                             <div class="ans-container">
                                 <a href='/${ans.username}' class="person-name">${ans.username.toUpperCase()}</a>
                                 <div class="ans-content">
-                                    ${ans.answer}
+                                    ${ans.answer.slice(0, 200)}
                                 </div>
                                 <div class="time">${ans.time}</div>
                             </div>
@@ -35,8 +35,8 @@ async function getQueries() {
                         <div class="profile-pic">${query.authorName[0].toUpperCase()}</div>
                         <div class="query-container">
                             <a class='person-link' href='/${query.authorName}' class="person-name">${query.authorName.toUpperCase()}</a>
-                            <div class="query-title">${query.title}</div>
-                            <div class="query-content">${query.content}</div>
+                            <a href="query/${query.id}" class="query-title">${query.title.slice(0, 40)}</a>
+                            <div class="query-content">${query.content.slice(0, 200)}</div>
                         </div>
                         <div class="time">${query.time}</div>
                     </div>
@@ -47,11 +47,10 @@ async function getQueries() {
                 <form action="/submitAns" method="post" class="ans-area" id="ans-area">
                     <input type="text" name="username" id="username" value="${localStorage.getItem('username')}" hidden>
                     <input type="number" name="id" id="" value='${query.id}' hidden>
-                    <textarea name="answer" id="answer" required></textarea>
+                    <textarea name="answer" id="answer" placeholder="Help ${query.authorName.toUpperCase()}" required></textarea>
                     <button class="submit-ans" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
-
             `
         )
     })
@@ -116,15 +115,6 @@ function initial() {
         `
     } else {
         pageHTML = `
-            <div class="ask-your-query">
-                <h1>Ask you query</h1>
-                <form action="/submitted" method="post" class="ask-query-container">
-                    <input type="text" name="authorName" id="authorName" value="" hidden>
-                    <input type="text" name="title" id="title" placeholder="Title..." required>
-                    <textarea name="content" id="content" placeholder="Query..." required></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
             <main>
                 <div class="recent-query-header">
                     Recent Queries

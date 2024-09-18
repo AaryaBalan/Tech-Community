@@ -20,9 +20,14 @@ nav {
     height: 50px;
 }
 
+section{
+    margin-top: 60px;
+}
+
 
 .nav-links {
     color: white;
+    text-decoration: none;
 }
 
 .nav-left-portion,
@@ -68,6 +73,7 @@ nav {
 .banner-text {
     color: #1b1f50;
     line-height: 1.5;
+    font-size: 22px;
 }
 
 .banner2 {
@@ -76,6 +82,10 @@ nav {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    background-color: #c4d4f9;
+    padding: 10px 100px;
+    font-size: 22px;
+    margin-bottom: 30px;
 }
 
 .banner2-img {
@@ -102,6 +112,10 @@ nav {
     font-weight: 600;
     line-height: 1.5;
     color: #1b1f50;
+}
+
+.banner-label {
+    font-size: 19px;
 }
 
 main {
@@ -213,6 +227,7 @@ textarea {
     font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
+    transition: .18s;
 }
 
 .ask-your-query {
@@ -255,7 +270,7 @@ textarea {
     transition: .18s;
 }
 
-.ask-query-container button:hover{
+.ask-query-container button:hover {
     scale: 1.1;
 }
 
@@ -293,11 +308,11 @@ textarea {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.ans-container{
+.ans-container {
     position: relative;
 }
 
-.ans-container a{
+.ans-container a {
     color: #1b1f50;
     text-decoration: underline;
 }
@@ -368,25 +383,26 @@ textarea {
     transition: .18s;
 }
 
-.start-discussion h1:hover{
+.start-discussion h1:hover {
     transform: rotate(10deg);
 }
 
 
 @keyframes move {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+
+    to {
         transform: rotate(360deg);
     }
 }
 
-.banner2-img{
+.banner2-img {
     animation: move infinite 5s;
 }
 
-.time{
+.time {
     font-family: 'Courier New', Courier, monospace;
     position: absolute;
     right: 10px;
@@ -397,3 +413,40 @@ textarea {
 i {
     color: white;
 }
+
+.vote-container {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.vote-container p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    color: #496ee8;
+    text-decoration: underline;
+
+}
+
+button[type="submit"]:hover {
+    scale: 1.1;
+    background-color: #1b1f50;
+}
+
+.active {
+    background-color: #9bb8f5;
+    color: #1b1f50;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.brand {
+    background-color: #9bb8f5;
+    color: #1b1f50;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+

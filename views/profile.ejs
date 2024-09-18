@@ -18,12 +18,12 @@
     <nav>
         <div class="nav-left-portion">
             <!-- <img src={menu} alt="" className="icons" /> -->
-            <a href="/" class="nav-links">Tech Community</a>
+            <a href="/" class="nav-links brand">Tech Community</a>
         </div>
         <div class="nav-right-portion">
             <a href="/trending" class="nav-links">Trending</a>
             <a href="/ask" class="nav-links">Ask</a>
-            <a href="/profile" class="nav-links">My Profile</a>
+            <a href="/profile" class="nav-links active">My Profile</a>
         </div>
     </nav>
 
@@ -31,7 +31,7 @@
         <div class="profile-main">
             <div class="profile-container">
                 <div class="dp">
-                    <img src="images/profile.png" alt="">
+                    <img src="images/profile.webp" alt="">
                 </div>
                 <div class="profile-info">
                     <input type="text" name="username" id="username" placeholder="User Name" required>
@@ -54,6 +54,14 @@
             </div>
         </div>
     </form>
+
+    <hr>
+    <h1 class="your-queries">Your Queries</h1>
+    <div class="recent-container1" id="query">
+        <img src="images/your_query.svg" alt="">
+        <h1>You never posted any queries yet!</h1>
+    </div>
+
 
     <script src="scripts/profile.js"></script>
 </body>
