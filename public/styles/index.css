@@ -1,0 +1,375 @@
+* {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    margin: 0;
+    scrollbar-width: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b56de;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    height: 50px;
+}
+
+
+.nav-links {
+    color: white;
+}
+
+.nav-left-portion,
+.nav-right-portion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+    list-style: none;
+}
+
+.icons {
+    height: 30px;
+    color: white;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    column-gap: 100px;
+    margin-top: 30px;
+}
+
+.banner-text-section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-weight: 500;
+    width: 600px;
+}
+
+.banner-slogan {
+    font-weight: 700;
+    font-size: 45px;
+    color: #2834a5;
+    font-family: "Silkscreen", sans-serif;
+    word-spacing: 10px;
+    /* letter-spacing: 5px; */
+}
+
+.banner-text {
+    color: #1b1f50;
+    line-height: 1.5;
+}
+
+.banner2 {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner2-img {
+    height: 300px;
+}
+
+.left-banner {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #1b1f50;
+}
+
+.right-banner {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #1b1f50;
+}
+
+main {
+    margin: 30px;
+    margin-top: 100px;
+    padding: 20px 10px;
+    border-radius: 7px;
+    /* background-color: #dee6fb; */
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+.recent-query-header {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #c4d4f9;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.recent-container {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 30px;
+    margin-top: 30px;
+}
+
+.query-info {
+    display: flex;
+    column-gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    font-size: 45px;
+    background-color: #1b1f50;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recent-query {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    background-color: #dee6fb;
+    padding: 20px;
+    border-radius: 7px;
+    width: 900px;
+}
+
+.query-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.person-name,
+.query-title {
+    font-weight: bold;
+    word-wrap: break-word;
+    width: 500px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.query-content {
+    /* width: 1300px; */
+    line-height: 1.5;
+    font-weight: 500;
+    word-wrap: break-word;
+    width: 700px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ans-area {
+    align-self: flex-end;
+    display: flex;
+    align-items: end;
+    column-gap: 20px;
+}
+
+textarea {
+    margin-top: 30px;
+    width: 450px;
+    height: 200px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #496ee8;
+    color: #1b1f50;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.submit-ans {
+    color: white;
+    background-color: #496ee8;
+    padding: 5px 20px;
+    border: none;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ask-your-query {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.ask-your-query h1 {
+    color: white;
+    background-color: #3b56de;
+    padding: 5px 20px;
+}
+
+.ask-query-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.ask-query-container input,
+.ask-query-container textarea,
+.ask-query-container button {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #496ee8;
+    color: #1b1f50;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ask-query-container button {
+    background-color: #3b56de;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .18s;
+}
+
+.ask-query-container button:hover{
+    scale: 1.1;
+}
+
+.user-ans {
+    /* padding: 20px 10px; */
+    line-height: 1.5;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-ans {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    align-items: start;
+}
+
+.single-ans-container {
+    display: flex;
+    column-gap: 30px;
+    background-color: #9bb8f5;
+    padding: 10px;
+    border-radius: 7px;
+    width: 820px;
+    align-self: flex-end;
+    /* margin-right: 100px; */
+}
+
+.ans-content {
+    word-wrap: break-word;
+    width: 700px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ans-pic {
+    font-size: 45px;
+    background-color: #1b1f50;
+    color: white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.gotoprofile {
+    background-color: #1b1f50;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 20px auto;
+    width: 200px;
+    display: block;
+    font-weight: 500;
+    border-radius: 7px;
+}
+
+.query-main-1 {
+    display: flex;
+    column-gap: 30px;
+}
+
+.ans-user-area {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 10px;
+}
+
+.person-link {
+    color: #1b1f50;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.start-discussion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.start-discussion img {
+    height: 500px;
+
+}
+
+.start-discussion h1 {
+    line-height: 2;
+    font-size: 40px;
+    background-color: #c4d4f9;
+    color: #3b56de;
+    padding: 5px 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px rgb(202, 200, 200);
+    transition: .18s;
+}
+
+.start-discussion h1:hover{
+    transform: rotate(10deg);
+}
+
+
+@keyframes move {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.banner2-img{
+    animation: move infinite 5s;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left-portion">
+            <!-- <img src={menu} alt="" className="icons" /> -->
+            <a href="/" class="nav-links">Tech Community</a>
+        </div>
+        <div class="nav-right-portion">
+            <a href="/trending" class="nav-links">Trending</a>
+            <a href="" class="nav-links">Create</a>
+            <a href="/profile" class="nav-links">My Profile</a>
+        </div>
+    </nav>
+
+    <form action="/saveProfile" method="post" class="profile-section">
+        <div class="profile-main">
+            <div class="profile-container">
+                <div class="dp">
+                    <img src="images/profile.png" alt="">
+                </div>
+                <div class="profile-info">
+                    <input type="text" name="username" id="username" placeholder="User Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <div class="gender">
+                        <input type="radio" id="male" name="gender" value="male" class="radio-input">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" class="radio-input">
+                        <label for="female">Female</label>
+                        <input type="radio" id="others" name="gender" value="others" class="radio-input">
+                        <label for="others">Others</label>
+                    </div>
+                </div>
+            </div>
+            <div class="bio">
+                <textarea name="bio" id="bio" placeholder="Write Your Bio..." required></textarea>
+            </div>
+            <div class="save-profile">
+                <button class="save-profile" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+
+    <script src="scripts/profile.js"></script>
+</body>
+
+</html>
