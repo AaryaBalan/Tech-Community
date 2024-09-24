@@ -1,9 +1,19 @@
+a()
 initial()
 
-async function getQueries() {
+async function a() {
+    setInterval(async () => {
+        const queries = await fetch('/queries')
+        const queriesJson = await queries.json()
+        console.log(queriesJson)
+        getQueries(queriesJson)
+    }, 1000)
+}
+
+
+async function getQueries(queriesJson) {
     // document.querySelector('#authorName').value = localStorage.getItem('username')
-    const queries = await fetch('/queries')
-    const queriesJson = await queries.json()
+
     let html = queriesJson.map(query => {
 
         const ansHTML = query.answer.map(ans => {
@@ -54,7 +64,7 @@ async function getQueries() {
             `
         )
     })
-    console.log(html)
+    // console.log(html)
     if (html == '') {
         html = `
         <div class="start-discussion">
@@ -65,8 +75,6 @@ async function getQueries() {
     }
     document.querySelector('.recent-container').innerHTML = html
 }
-
-getQueries()
 
 
 function initial() {
