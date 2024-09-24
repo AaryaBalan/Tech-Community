@@ -1,8 +1,9 @@
 a()
 initial()
 
-
-
+function name(params) {
+    
+}
 async function getQueries(queriesJson) {
     // document.querySelector('#authorName').value = localStorage.getItem('username')
 
