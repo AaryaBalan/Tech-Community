@@ -1,14 +1,6 @@
 a()
 initial()
 
-async function a() {
-    setInterval(async () => {
-        const queries = await fetch('/queries')
-        const queriesJson = await queries.json()
-        console.log(queriesJson)
-        getQueries(queriesJson)
-    }, 1000)
-}
 
 
 async function getQueries(queriesJson) {
