@@ -1,4 +1,3 @@
-// initial()
 const queryId = +window.location.href.split('/')[window.location.href.split('/').length - 1]
 console.log(queryId)
 
@@ -58,80 +57,7 @@ async function getQueries() {
             `
     }
 
-    
-
-    console.log(html)
-    // if (html == '') {
-    //     html = `
-    //     <div class="start-discussion">
-    //         <img src="images/start_discussion.svg" alt="">
-    //         <h1>Why hesitation ? <br>Start Your DIscussion!</h1>
-    //     </div>
-    //     `
-    // }
     document.querySelector('.recent-container').innerHTML = html
 }
 
 getQueries()
-
-
-// function initial() {
-//     let pageHTML = ''
-//     if (!localStorage.getItem('username')) {
-//         pageHTML = `
-
-//         <div class="banner">
-//             <img src="images/tech_community.svg" alt="">
-//             <div class="banner-text-section">
-//                 <div class="banner-slogan">
-//                     Skip the Scroll, Join the Code
-//                 </div>
-//                 <div class="banner-text">
-//                     "Why waste time on social media when you can build, innovate, and connect with like-minded tech
-//                     enthusiasts? Join our
-//                     community, where coding meets collaboration, and ideas turn into reality!"
-//                 </div>
-//             </div>
-//         </div>
-
-//         <div class="banner2">
-//             <div class="left-banner">
-//                 <img class="banner2-img" src="images/discussion.svg" alt="">
-//                 <div class="banner-label">
-//                     Don’t just scroll, discuss and build! Join our tech community where every conversation sparks
-//                     innovation
-//                     and
-//                     collaboration drives success.
-//                 </div>
-//             </div>
-
-//             <div class="right-banner">
-//                 <img class="banner2-img" src="images/connect.svg" alt="">
-//                 <div class="banner-label">
-//                     Where innovation meets connection—join our community and collaborate with tech enthusiasts who are
-//                     as
-//                     passionate as you!
-//                 </div>
-//             </div>
-//         </div>
-
-
-
-//         <a class="gotoprofile" href="/profile">JOIN</a>
-//         `
-//     } else {
-//         pageHTML = `
-//             <main>
-//                 <div class="recent-query-header">
-//                     Recent Queries
-//                 </div>
-//                 <div class="recent-container" id="query">
-                    
-//                 </div>
-//             </main>
-//         `
-//     }
-
-
-//     document.querySelector('section').innerHTML = pageHTML
-// }

@@ -1,8 +1,9 @@
-a()
 initial()
 
-async function getQueries(queriesJson) {
+async function getQueries() {
     // document.querySelector('#authorName').value = localStorage.getItem('username')
+    const queries = await fetch('/queries')
+    const queriesJson = await queries.json()
 
     let html = queriesJson.map(query => {
 
@@ -65,6 +66,8 @@ async function getQueries(queriesJson) {
     }
     document.querySelector('.recent-container').innerHTML = html
 }
+
+getQueries()
 
 
 function initial() {

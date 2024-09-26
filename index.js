@@ -1,7 +1,6 @@
 const express = require('express')
 const { url } = require('inspector')
 const app = express()
-const {getHomePage} = require('./utility/utility')
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))

@@ -1,5 +1,3 @@
-
-
 function radioClicked() {
     const inputs = document.querySelectorAll('.radio-input')
     inputs.forEach(input => {
