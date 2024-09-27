@@ -31,13 +31,14 @@ async function getQueries() {
         })
 
         html = `
+            
             <div class="query-main-1" id="#query">
                 <div class="recent-query">
                     <div class="query-info">
                         <div class="profile-pic">${expectedQuery.authorName[0].toUpperCase()}</div>
                         <div class="query-container">
                             <a class='person-link' href='/${expectedQuery.authorName}' class="person-name">${expectedQuery.authorName.toUpperCase()}</a>
-                            <a href="query/${expectedQuery.id}" class="query-title">${expectedQuery.title}</a>
+                            <a href="" class="query-title">${expectedQuery.title}</a>
                             <div class="query-content">${expectedQuery.content}</div>
                         </div>
                         <div class="time">${expectedQuery.time}</div>

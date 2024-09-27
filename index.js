@@ -25,18 +25,17 @@ app.post('/submitted', (req, res) => {
         time: `${months[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
     }
     queries.push(queryData)
-    console.log(queryData)
     res.redirect('trending#query')
 })
 
 app.post('/submitAns', (req, res) => {
+    console.log(req)
     const date = new Date()
     const queryData = queries.find(query => {
         return query.id == req.body.id
     })
     queryData.answer.push({ ...req.body, time: `${months[date.getMonth()]} ${date.getDate()} ${date.getHours()}:${date.getMinutes()}` })
     queries[req.body.id - 1] = queryData
-    console.log(queryData)
     res.redirect('trending#query')
 })
 

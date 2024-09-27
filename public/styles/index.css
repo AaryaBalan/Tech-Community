@@ -120,7 +120,7 @@ section{
 
 main {
     margin: 30px;
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 20px 10px;
     border-radius: 7px;
     /* background-color: #dee6fb; */
@@ -450,3 +450,7 @@ button[type="submit"]:hover {
     border-radius: 10px;
 }
 
+.goto-trending{
+    color: #496ee8;
+    font-weight: bold;
+}
